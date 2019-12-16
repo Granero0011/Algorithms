@@ -3,7 +3,16 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  ing = list(recipe.keys())
+  min = 1000
+  for i in ing:
+    if i in ingredients.keys():
+      p = ingredients[i] // recipe[i]
+      if p < min:
+        min = p
+    else:
+      min = 0
+  return min
 
 
 if __name__ == '__main__':
